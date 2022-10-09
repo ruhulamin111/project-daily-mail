@@ -1,6 +1,6 @@
 import styles from '../styles/Header.module.css'
 import MenuIcon from '@mui/icons-material/Menu';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
+// import ContactMailIcon from '@mui/icons-material/ContactMail';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AppsIcon from '@mui/icons-material/Apps';
@@ -11,14 +11,14 @@ import { Avatar, IconButton } from '@mui/material';
 function Header() {
   return (
     <div className={styles.header}>
-      
+
       <div className={styles.header_left}>
         <IconButton>
-        <MenuIcon />
-        {/* image logo */}
+          <MenuIcon />
+          {/* image logo */}
         </IconButton>
 
-          
+
         <h2 className={styles.logo2}>Daily Mail</h2>
       </div>
 
@@ -29,16 +29,16 @@ function Header() {
       </div>
 
       <div className={styles.header_right}>
-        
+
         <IconButton>
-        <AppsIcon />
+          <AppsIcon />
         </IconButton>
-          <IconButton>
+        <IconButton>
           <NotificationsIcon />
-          </IconButton>
-            <IconButton>
+        </IconButton>
+        <IconButton>
           <Avatar />
-            </IconButton>
+        </IconButton>
       </div>
     </div>
   )
