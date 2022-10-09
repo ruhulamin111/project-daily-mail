@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Sidebar from '../components/Sidebar'
+import Emails from './emails/emailList'
 
 export default function Home() {
   return (
@@ -14,9 +16,11 @@ export default function Home() {
         <header>
           <Header />
         </header>
-
+        <section className='app-body'>
+          <Sidebar />
+          <Emails />
+        </section>
       </main>
-
     </div>
   )
 }
