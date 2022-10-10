@@ -13,6 +13,7 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmailRow from "../../components/EmailRow";
 
 export default function Emails() {
+
     return (
         <div className='emailList'>
             <div className='emailList-settings'>
