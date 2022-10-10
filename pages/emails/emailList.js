@@ -10,6 +10,7 @@ import Section from "../../components/Section";
 import InboxIcon from '@mui/icons-material/Inbox';
 import PeopleIcon from '@mui/icons-material/People';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
+import EmailRow from "../../components/EmailRow";
 
 export default function Emails() {
     return (
@@ -46,7 +47,38 @@ export default function Emails() {
                 <Section Icon={InboxIcon} title='Primary' color='red' selected />
                 <Section Icon={PeopleIcon} title='Social' color='#1A73E8' />
                 <Section Icon={LocalOfferIcon} title='Promotions' color='green' />
-
+            </div>
+            <div className="emailList-list">
+                <EmailRow
+                    title='Twitch'
+                    subject='Key follow streamer!!'
+                    description='This is a test'
+                    time='10pm'
+                />
+                <EmailRow
+                    title='Twitch'
+                    subject='Key follow streamer!!'
+                    description='This is a test'
+                    time='10pm'
+                />
+                <EmailRow
+                    title='Twitch'
+                    subject='Key follow streamer!!'
+                    description='This is a test'
+                    time='10pm'
+                />
+                <EmailRow
+                    title='Twitch'
+                    subject='Key follow streamer!!'
+                    description='This is a test'
+                    time='10pm'
+                />
+                <EmailRow
+                    title='Twitch'
+                    subject='Key follow streamer!!'
+                    description='This is a test'
+                    time='10pm'
+                />
             </div>
 
         </div>
