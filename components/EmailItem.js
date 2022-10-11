@@ -68,7 +68,7 @@ export default function Email() {
                     <p className={styles.mail_time}>10 pm</p>
                 </div>
                 <div className={styles.mail_message}>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus consectetur sunt hic, iste quisquam. Beatae rerum cupiditate temporibus totam?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed voluptatibus consectetur sunt hic, iste quisquam. Beatae rerum cupiditate temporibus totam? </p>
 
                 </div>
             </div>
