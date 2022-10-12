@@ -7,12 +7,13 @@ import Image from 'next/image';
 
 const Login = () => {
     const { data: session } = useSession()
+    console.log(session);
     if (session) {
         return (
             <div className={styles.login}>
                 <div className={styles.loginContainer}>
                     <Image src='/../public/assets/Asset.png' alt='image' width='125' height='50' />
-                    <p>welcome, {session.user.email}</p>
+                    <p>welcome, {session.user.name}</p>
                     <button onClick={() => signOut()}>Sign out</button>
                 </div>
             </div>
