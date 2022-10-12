@@ -4,6 +4,7 @@ import styles from '../styles/EmailRow.module.css'
 import { Checkbox } from "@mui/material";
 import { useRouter } from "next/router";
 
+
 export default function EmailRow({ id, title, subject, description, time }) {
     const router = useRouter()
 
