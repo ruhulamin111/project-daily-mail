@@ -22,9 +22,7 @@ export default function Home() {
           <Sidebar />
           <Emails />
         </section>
-
       </main>
-
     </div>
   )
 }
