@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Login from '../components/login'
 import Sidebar from '../components/Sidebar'
 import Emails from './emails/emailList'
 
@@ -15,6 +16,7 @@ export default function Home() {
       <main>
         <header>
           <Header />
+          {/* <Login /> */}
         </header>
         <section className='app-body'>
           <Sidebar />
