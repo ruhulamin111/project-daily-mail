@@ -7,7 +7,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Image from 'next/image';
 import { Avatar, IconButton } from '@mui/material';
-import logo from '../assets/Asset.png'
+import logo from '../public/assets/Asset.png'
 
 
 function Header() {
