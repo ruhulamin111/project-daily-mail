@@ -16,7 +16,7 @@ export default function Home() {
       <main>
         <header>
           <Header />
-          <Login />
+          {/* <Login /> */}
         </header>
         <section className='app-body'>
           <Sidebar />
