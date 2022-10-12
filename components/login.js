@@ -1,11 +1,15 @@
 import React from 'react';
+import styles from '../styles/Login.module.css'
+import logo from '../assets/Asset.png'
 
-const login = () => {
+const Login = () => {
     return (
-        <div>
-            this is login
+        <div className={styles.login}>
+            <div className={styles.login_container}>
+                <img src={logo} alt="" />
+            </div>
         </div>
     );
 };
 
-export default login;
+export default Login;
