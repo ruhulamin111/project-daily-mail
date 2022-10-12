@@ -5,22 +5,12 @@
     height: 100vh;
 }
 
-<<<<<<< HEAD
-.login_container {
-=======
 .loginContainer {
->>>>>>> 4db526e4fc3bac2a3e8b8eef98bed1d85f8ae08d
     display: flex;
     flex-direction: column;
 }
 
-<<<<<<< HEAD
 .login_container>img {
     object-fit: contain;
     height: 200px;
-=======
-.loginContainer img {
-    object-fit: contain;
-    /* height: 200px; */
->>>>>>> 4db526e4fc3bac2a3e8b8eef98bed1d85f8ae08d
 }
