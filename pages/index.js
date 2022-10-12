@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+
 import SendMail from '../components/SendMail'
+
+import Login from '../components/login'
+
 import Sidebar from '../components/Sidebar'
 import Emails from './emails/emailList'
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,12 +24,15 @@ export default function Home() {
       <main>
         <header>
           <Header />
+          {/* <Login /> */}
         </header>
         <section className='app-body'>
           <Sidebar />
           <Emails />
         </section>
+
         {sendMessageIsOpen && <SendMail />}
+
       </main>
     </div>
   )

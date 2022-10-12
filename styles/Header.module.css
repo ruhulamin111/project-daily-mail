@@ -1,25 +1,28 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid whitesmoke;
 }
-.header_left > img {
+
+.header_left>img {
     object-fit: contain;
     height: 80px;
     margin-left: 5px;
 }
 
-.logo2{
+.logo2 {
     font-size: 20px;
     cursor: pointer;
     color: rgba(0, 0, 0, 0.54);
 }
-.header_left{
+
+.header_left {
     display: flex;
     align-items: center;
 }
-.header_middle{
+
+.header_middle {
     display: flex;
     flex: 0.7;
     align-items: center;
@@ -27,10 +30,12 @@
     padding: 10px;
     border-radius: 5px;
 }
-.header_middle > .MuiSvgIcon-root {
+
+.header_middle>.MuiSvgIcon-root {
     color: gray;
 }
-.header_middle > input {
+
+.header_middle>input {
     border: none;
     padding: 10px;
     width: 100%;
@@ -42,4 +47,3 @@
 .header_right {
     display: flex;
 }
-

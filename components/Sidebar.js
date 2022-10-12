@@ -23,8 +23,9 @@ export default function Sidebar() {
             <Button
                 startIcon={<Add />}
                 className={styles.sidebar__composeBtn}
-                fontSize='large'
+
                 onClick={()=>dispatch(openSendMessage())}
+
             >
                 Compose
             </Button>
