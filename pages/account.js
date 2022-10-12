@@ -1,11 +1,11 @@
-import { useSession, signOut } from 'next-auth/react';
+import { useSession, signOut, getSession } from 'next-auth/react';
 import React from 'react';
 
 
 const Account = () => {
-    const { data: session } = useSession()
+    const { data: session, status } = useSession()
 
-    if (session) {
+    if (status === 'authenticated') {
         return (
             <div>
                 <p>Welcome {session.user.name}</p>
@@ -23,3 +23,11 @@ const Account = () => {
 };
 
 export default Account;
+
+export const getServerSideProps = async (context) => {
+    const session = await getSession(context)
+
+    return {
+        props: { session },
+    }
+}
