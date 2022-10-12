@@ -17,7 +17,6 @@ export default function Sidebar() {
             <Button
                 startIcon={<Add />}
                 className={styles.sidebar__composeBtn}
-                fonSize='large'
             >
                 Compose
             </Button>
