@@ -7,6 +7,8 @@ import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Image from 'next/image';
 import { Avatar, IconButton } from '@mui/material';
+import logo from '../assets/Asset.png'
+
 
 function Header() {
   return (
@@ -17,14 +19,13 @@ function Header() {
           <MenuIcon />
           {/* image logo */}
         </IconButton>
-
-
-        <h2 className={styles.logo2}>Daily Mail</h2>
+        <Image src={logo} alt=''></Image>
+        {/* <h2 className={styles.logo2}>Daily Mail</h2> */}
       </div>
 
       <div className={styles.header_middle}>
         <SearchIcon />
-        <input placeholder='Find Your Daily Mail' type="text" />
+        <input placeholder='Search your mail' type="text" />
         <ArrowDropDownIcon />
       </div>
 
