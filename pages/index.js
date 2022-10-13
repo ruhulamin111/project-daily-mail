@@ -1,10 +1,12 @@
+import { getProviders } from 'next-auth/react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Login from '../components/login'
 import Sidebar from '../components/Sidebar'
 import Emails from './emails/emailList'
 
-export default function Home() {
+export default function Home({ providers }) {
+  console.log(providers);
   return (
     <div>
       <Head>
@@ -27,4 +29,15 @@ export default function Home() {
 
     </div>
   )
+}
+
+
+export async function getServerSideProps(context) {
+  const providers = await getProviders()
+
+  return {
+    props: {
+      providers,
+    },
+  }
 }

@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Login = () => {
     const { data: session, status } = useSession()
     console.log(session);
-    if (status === 'authenticated') {
+    if (session) {
         return (
             <div className={styles.login}>
                 <div className={styles.loginContainer}>
@@ -36,18 +36,18 @@ const Login = () => {
 
 export default Login;
 
-export const getServerSideProps = async (context) => {
-    const session = await getSession(context)
+// export const getServerSideProps = async (context) => {
+//     const session = await getSession(context)
 
-    if (!session) {
-        return {
-            redirect: {
-                destination: '/login/'
-            }
-        }
-    }
+//     if (!session) {
+//         return {
+//             redirect: {
+//                 destination: '/login/'
+//             }
+//         }
+//     }
 
-    return {
-        props: { session },
-    }
-}
+//     return {
+//         props: { session },
+//     }
+// }
