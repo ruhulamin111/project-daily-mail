@@ -10,14 +10,22 @@ import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import NoteIcon from '@mui/icons-material/Note';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useDispatch } from 'react-redux';
+import { openSendMessage } from '../features/mailSlice';
+
 
 export default function Sidebar() {
+
+    const dispatch = useDispatch()
+
     return (
         <div className={styles.sidebar}>
             <Button
                 startIcon={<Add />}
                 className={styles.sidebar__composeBtn}
-                fontSize='large'
+
+                onClick={()=>dispatch(openSendMessage())}
+
             >
                 Compose
             </Button>

@@ -1,10 +1,18 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+
+import SendMail from '../components/SendMail'
+
 import Login from '../components/login'
+
 import Sidebar from '../components/Sidebar'
 import Emails from './emails/emailList'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSendMessageIsOpen } from '../features/mailSlice'
 
 export default function Home() {
+
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
   return (
     <div>
       <Head>
@@ -23,8 +31,9 @@ export default function Home() {
           <Emails />
         </section>
 
-      </main>
+        {sendMessageIsOpen && <SendMail />}
 
+      </main>
     </div>
   )
 }

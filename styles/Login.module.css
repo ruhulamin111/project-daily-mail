@@ -5,10 +5,12 @@
     height: 100vh;
 }
 
+
 .loginContainer {
     display: flex;
     flex-direction: column;
 }
+
 
 .loginContainer img {
     object-fit: contain;
