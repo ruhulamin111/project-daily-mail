@@ -23,9 +23,7 @@ export default function Sidebar() {
             <Button
                 startIcon={<Add />}
                 className={styles.sidebar__composeBtn}
-
-                onClick={()=>dispatch(openSendMessage())}
-
+                onClick={() => dispatch(openSendMessage())}
             >
                 Compose
             </Button>
