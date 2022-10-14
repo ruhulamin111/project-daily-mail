@@ -8,9 +8,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Image from 'next/image';
 import { Avatar, IconButton } from '@mui/material';
 import logo from '../public/assets/Asset.png'
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 function Header() {
+
+  const { data: session, status } = useSession()
+
   return (
     <div className={styles.header}>
 
@@ -38,7 +43,10 @@ function Header() {
           <NotificationsIcon />
         </IconButton>
         <IconButton>
-          <Avatar />
+          <Avatar src={session?.user?.image} />
+        </IconButton>
+        <IconButton>
+          <LogoutIcon onClick={() => signOut()} />
         </IconButton>
       </div>
     </div>
