@@ -25,10 +25,9 @@ export default function Emails() {
             const documents = querySnapshot.docs.map((doc) => {
                 return {
                     ...doc.data(),
-                    id: doc.id
+                    id: doc.id,
                 }
             });
-            console.log('abc', documents)
             setEmails(documents);
         });
         return () => unsub();

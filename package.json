@@ -26,5 +26,18 @@
   "devDependencies": {
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1"
-  }
+  },
+  "description": "",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruhulamin111/project-daily-mail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruhulamin111/project-daily-mail/issues"
+  },
+  "homepage": "https://github.com/ruhulamin111/project-daily-mail#readme"
 }

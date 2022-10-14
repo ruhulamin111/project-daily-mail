@@ -9,6 +9,7 @@ import { selectSendMessageIsOpen } from '../features/mailSlice'
 import Image from 'next/image'
 import styles from '../styles/Login.module.css'
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
+import logo from '../assets/Asset.png'
 
 
 export default function Home() {
@@ -41,7 +42,7 @@ export default function Home() {
   } else {
     return (
       <div className={styles.form}>
-        <Image className={styles.img} src='/../public/assets/Asset.png' alt='image' width={'125'} height={'50'} />
+        <Image className={styles.img} src={logo} alt='image' width={'125'} height={'50'} />
         {/* <input className={styles.input} type="email" name='email' placeholder='Email' />
         <input className={styles.input} type="password" name="Password" id="" placeholder='Password' /> */}
         <p>You are not signed in</p>

@@ -7,7 +7,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Image from 'next/image';
 import { Avatar, IconButton } from '@mui/material';
-import logo from '../public/assets/Asset.png'
+import logo from '../assets/Asset.png'
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 import LogoutIcon from '@mui/icons-material/Logout';
 
