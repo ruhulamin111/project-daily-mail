@@ -13,20 +13,27 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmailRow from "../../components/EmailRow";
 import { useEffect, useState } from "react";
 import database from "../../firebaseInit/firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, getFirestore } from "firebase/firestore";
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { onSnapshot } from "firebase/firestore";
+
 
 export default function Emails() {
-    let abc = []
+    const [emails, setEmails] = useState([])
     useEffect(() => {
-        const getDocuments = async () => {
-            const q = query(collection(database, "emails"));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => abc.push(doc.data()));
-        }
-        console.log(abc);
-        getDocuments()
-    }, [])
-    console.log(abc)
+        const unsub = onSnapshot(collection(database, 'emails'), (querySnapshot) => {
+            const documents = querySnapshot.docs.map((doc) => {
+                return {
+                    ...doc.data(),
+                    id: doc.id
+                }
+            });
+            console.log('abc', documents)
+            setEmails(documents);
+        });
+        return () => unsub();
+    }, [emails])
+
 
     return (
         <div className='emailList'>
@@ -65,20 +72,14 @@ export default function Emails() {
             </div>
             <div className="emailList-list">
                 {
-                    abc.map((a, i) => <EmailRow
+                    emails?.map((a, i) => <EmailRow
                         key={i}
                         title={a.to}
                         subject={a.subject}
                         description={a.message}
-                        time='10pm'
+                        time='10 pm'
                     />)
                 }
-                <EmailRow
-                    title='Hi'
-                    subject='hello'
-                    description='name'
-                    time='10pm'
-                />
 
             </div>
 
