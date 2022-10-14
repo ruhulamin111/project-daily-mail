@@ -11,8 +11,22 @@ import InboxIcon from '@mui/icons-material/Inbox';
 import PeopleIcon from '@mui/icons-material/People';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmailRow from "../../components/EmailRow";
+import { useEffect, useState } from "react";
+import database from "../../firebaseInit/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default function Emails() {
+    let abc = []
+    useEffect(() => {
+        const getDocuments = async () => {
+            const q = query(collection(database, "emails"));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => abc.push(doc.data()));
+        }
+        console.log(abc);
+        getDocuments()
+    }, [])
+    console.log(abc)
 
     return (
         <div className='emailList'>
@@ -50,36 +64,22 @@ export default function Emails() {
                 <Section Icon={LocalOfferIcon} title='Promotions' color='green' />
             </div>
             <div className="emailList-list">
+                {
+                    abc.map((a, i) => <EmailRow
+                        key={i}
+                        title={a.to}
+                        subject={a.subject}
+                        description={a.message}
+                        time='10pm'
+                    />)
+                }
                 <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
+                    title='Hi'
+                    subject='hello'
+                    description='name'
                     time='10pm'
                 />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
+
             </div>
 
         </div>
