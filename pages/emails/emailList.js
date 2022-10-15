@@ -11,8 +11,28 @@ import InboxIcon from '@mui/icons-material/Inbox';
 import PeopleIcon from '@mui/icons-material/People';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import EmailRow from "../../components/EmailRow";
+import { useEffect, useState } from "react";
+import database from "../../firebaseInit/firebase";
+import { collection, query, where, getDocs, getFirestore } from "firebase/firestore";
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { onSnapshot } from "firebase/firestore";
+
 
 export default function Emails() {
+    const [emails, setEmails] = useState([])
+    useEffect(() => {
+        const unsub = onSnapshot(collection(database, 'emails'), (querySnapshot) => {
+            const documents = querySnapshot.docs.map((doc) => {
+                return {
+                    ...doc.data(),
+                    id: doc.id,
+                }
+            });
+            setEmails(documents);
+        });
+        return () => unsub();
+    }, [emails])
+
 
     return (
         <div className='emailList'>
@@ -50,36 +70,16 @@ export default function Emails() {
                 <Section Icon={LocalOfferIcon} title='Promotions' color='green' />
             </div>
             <div className="emailList-list">
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
-                <EmailRow
-                    title='Twitch'
-                    subject='Key follow streamer!!'
-                    description='This is a test'
-                    time='10pm'
-                />
+                {
+                    emails?.map((a, i) => <EmailRow
+                        key={i}
+                        title={a.to}
+                        subject={a.subject}
+                        description={a.message}
+                        time='10 pm'
+                    />)
+                }
+
             </div>
 
         </div>

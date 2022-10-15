@@ -13,12 +13,31 @@
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
+    "@reduxjs/toolkit": "^1.8.6",
+    "firebase": "^9.12.1",
     "next": "12.3.1",
+    "next-auth": "^4.13.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-hook-form": "^7.37.0",
+    "react-redux": "^8.0.4"
   },
   "devDependencies": {
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1"
-  }
+  },
+  "description": "",
+  "main": "next.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruhulamin111/project-daily-mail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruhulamin111/project-daily-mail/issues"
+  },
+  "homepage": "https://github.com/ruhulamin111/project-daily-mail#readme"
 }
