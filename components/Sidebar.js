@@ -15,7 +15,6 @@ import { openSendMessage } from '../features/mailSlice';
 
 
 export default function Sidebar() {
-
     const dispatch = useDispatch()
 
     return (
@@ -23,9 +22,7 @@ export default function Sidebar() {
             <Button
                 startIcon={<Add />}
                 className={styles.sidebar__composeBtn}
-
                 onClick={() => dispatch(openSendMessage())}
-
             >
                 Compose
             </Button>
